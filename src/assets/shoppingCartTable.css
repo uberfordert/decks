@@ -1,0 +1,14 @@
+table.shoppingCartTable {
+  width: 100%;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+table.shoppingCartTable td,
+table.shoppingCartTable th {
+  padding: 5px;
+}
+
+table.shoppingCartTable thead {
+  background-color: #7ea8f8;
+}
