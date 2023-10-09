@@ -71,10 +71,11 @@
                   name="size"
                   v-model="useCartStore().tempCartItem.size"
                 >
-                  <option class="text-inherit" value="XS">XS</option>
-                  <option value="S">S</option>
-                  <option value="M">M</option>
-                  <option value="L">L</option>
+                  <option class="text-inherit" value="8.00">8.00</option>
+                  <option value="8.25">8.25</option>
+                  <option value="8.38">8.38</option>
+                  <option value="8.50">8.50</option>
+                  <option value="8.75">8.75</option>
                 </select>
               </th>
               <th class="whitespace-nowrap px-6 py-2">
@@ -112,7 +113,7 @@ import { useItemVisibilityStore } from "../store/itemVisibility.js";
 import { Motion } from "motion/vue";
 import { useErrorStore } from "../store/error.js";
 
-const SHIRT_PRICE = 25.0;
+const DECK_PRICE = 50.0;
 const isButtonDisabled = ref(false);
 
 const addItemToCart = () => {
@@ -127,7 +128,7 @@ const addItemToCart = () => {
       text: useCartStore().tempCartItem.text,
     };
     useCartStore().addCartItem(tempShirtRef);
-    useCartStore().totalPrice.amount += SHIRT_PRICE;
+    useCartStore().totalPrice.amount += DECK_PRICE;
     console.log(useCartStore().cartList.list);
     useItemVisibilityStore().isEditSizeVisible = false;
   } else if (useCartStore().tempCartItem.size === "") {
@@ -145,7 +146,7 @@ const deleteShirt = (shirt) => {
   useCartStore().cartList.list = useCartStore().cartList.list.filter(
     (t) => t !== shirt
   );
-  useCartStore().totalPrice.amount -= SHIRT_PRICE;
+  useCartStore().totalPrice.amount -= DECK_PRICE;
   isButtonDisabled.value = true;
 };
 //Todo: try to change logic by only using the store

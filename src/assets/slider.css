@@ -30,7 +30,7 @@
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: red;
+  background-color: rgb(79, 59, 59);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
